@@ -1,13 +1,57 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* reset */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+*, *:before, *:after {margin:0px;padding:0px;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;/*outline:0;-webkit-tap-highlight-color:transparent;-ms-user-select: none; -moz-user-select: -moz-none;-webkit-user-select: none;user-select: none;-webkit-touch-callout:none;*/}
+
+html,body {height:100%; font-family: 'AppleSDGothicNeo-Regular','Malgun Gothic', '맑은 고딕', 'dotum', '돋움','Noto Sans KR','Spoqa Han Sans Neo', sans-serif;font-weight:400; font-size:16px; line-height:1; color:#111; -webkit-text-size-adjust:none; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box;}
+
+address, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, section {display:block\9; margin:0\9; padding:0\9;}
+
+hr {display:none;}
+
+caption {overflow:hidden; height:0px; font-size:0px; line-height:0px;}
+
+h1, h2, h3, h4, h5, h6 {font-weight: 700;}
+
+img {max-width:100%; border:none; vertical-align:middle;}
+
+ol, ul, li, dl, dt, dd {list-style:none;}
+
+table {table-layout:fixed; width:100%; border:0px; border-spacing:0px; border-collapse:collapse;}
+
+th, td {border:0px;word-break: break-all;white-space: normal;}
+
+th {font-weight:normal;}
+
+fieldset {width:100%; border:0px;}
+
+legend {display:none;}
+
+frameset {border:0px;}
+
+iframe {width:100%; border:0px;}
+
+em, address, i {font-style:normal;}
+
+button, a, input, label, textarea {font-family:'Noto Sans KR','Spoqa Han Sans Neo', sans-serif;vertical-align:middle;}
+
+input {height:2.8125rem;padding:0 1rem;border:1px solid #eef0f4;background-color: #eef0f4; color:#333;font-weight:400;border-radius: .25rem;}
+
+textarea {padding:1rem;border:1px solid #dadbdd;color:#222;font-weight:400;}
+
+input:focus {border: 1px solid #858585; background-color:#fff;}
+
+input[readonly] {background-color:#e4e6e9;}
+
+input:disabled {background-color:#e4e6e9;color:#b9b9b9;}
+
+select {height:2.8125rem;padding:0 0 0 1rem;border:1px solid #dadbdd;font-size:0.8125rem;color:#222;font-weight:400;vertical-align:middle;}
+
+select option {color:#999;}
+
+button {overflow:visible;outline:none;font-weight:500; background:none;cursor:pointer; border:0px;line-height: 0;}
+
+button::-moz-focus-inner {padding:0px;}
+
+::-ms-clear { display: none !important; width : 0;  height: 0;}
+
+::-ms-reveal {display: none;}

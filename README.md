@@ -5,3 +5,9 @@ SPA 형식 (React)
   ![SPA introduce](./README_images/SPA_introduce.png)
   
   - 멀티 페이지 형식이 아니라 하나의 페이지에서 동적으로 하나의 페이지의 '화면'을 바꿔가며 표현할 것 
+
+
+
+## 컴포넌트
+- MainPage
+![Main Page Componente](./README_images/gbk_component_main.png)
