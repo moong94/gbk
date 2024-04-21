@@ -1,12 +1,9 @@
-
-import {useEffect, useState} from "react";
-import axios from "axios";
-import './App.css'
+import logo from './logo.svg';
+import './App.css';
 import GbkMain from "./components/gbkMain";
 import React from "react";
 
 function App() {
-  
   return (
     <div className="gbk">
       <div className="gbk-main">
