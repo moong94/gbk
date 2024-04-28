@@ -1,14 +1,116 @@
-/* #mainHeaderPosition{
-    /*   position:fixed; */
-      
+#mainHeaderSticky{
+  position:sticky;
+  top:0;
+}
+
+#mainHeaderPosition{
+  /* width:600px; */
+  text-align:-webkit-center;
+  background-color: #ffffff;
+}
+
+#mainHeader{
+  display:grid;
+  grid-template: "mainTextArea headerContentsArea";
+  /* background-color: #ffffff; */
+  align-items:center;
+  width:600px;
+  padding: 26.67px;
+/*   grid-template-columns: 6fr 1fr 1fr; */
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.headerTitle{
+  line-height:41.67px;
+  grid-area:mainTextArea;
+  min-width: max-content;
+  font-size:33.33px;
+  font-weight: 700;
+  margin:0;
+  letter-spacing:-1px;
+}
+
+.headerKorea{
+  color:red;
+}
+
+#headerContents{
+  grid-area:headerContentsArea;
+  justify-self: end;
+  height:41.67px;
+}
+
+#saveKorea{
+  float:left;
+  line-height:41.67px;
+  text-align:center;
+  font-size:23.33px;
+  font-weight: 900;
+  letter-spacing:-1.25px;
+/*   grid-area:saveKoreaArea; */
+/*   justify-self: end; */
+  border:1.67px solid #D5DBE3;
+  padding: 2.5px 10px;
+  border-radius:10px;
+  min-width: max-content;
+  margin-right:13.33px;
+}
+
+#mainNavMenuBtn{
+  float:left;
+/*   grid-area:mainNavMenuBtnArea; */
+/*   justify-self: center; */
+  cursor:pointer;
+  font-size:50px;
+}
+
+#mainFooterPosition{
+  background-color: #F2F5F9;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -1.25px;
+  /* text-align: center; */
+  /* position: absolute; */
+  /* bottom: 0; */
+  line-height: 40px;
+  width: 100%;
+  text-align: -webkit-center;
+}  
+#mainFooter{
+  width:600px;
+  /* max-width:600px;
+  background-color:#F2F5F9;
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:-1.25px;
+  text-align:center;
+  position:absolute;
+  bottom:0;
+  line-height:40px; */
+}
+
+#vocMail{
+  padding:13.33px 0;
+}
+
+#footerText{
+  padding-bottom:13.33px;
+  margin:0 33.33px;
+}
     
-    
+
+
+  @media (max-width: 600px){
+    #mainHeaderPosition{
+    width:100%;
+    background-color: #ffffff;
+    }      
     #mainHeader{
+      width: 100%;
       display:grid;
-      position: sticky;
-      bottom:0;
       grid-template: "mainTextArea headerContentsArea";
-      background-color: #ffffff;
+      /* background-color: #ffffff; */
       align-items:center;
       padding: 4.44vw 4.44vw;
     /*   grid-template-columns: 6fr 1fr 1fr; */
@@ -58,8 +160,21 @@
       cursor:pointer;
       font-size:7.3vw;
     }
-    
+    #mainFooterPosition{
+      background-color: #F2F5F9;
+      font-size: 3.33vw;
+      font-weight: 700;
+      letter-spacing: -0.0625em;
+      /* text-align: center; */
+      /* position: absolute; */
+      /* bottom: 0; */
+      line-height: 2em;
+      width: 100%;
+      text-align: -webkit-center;
+    }    
     #mainFooter{
+      width:100%;
+      /* width:100%;
       background-color:#F2F5F9;
       font-size:3.33vw;
       font-weight:700;
@@ -67,7 +182,7 @@
       text-align:center;
       position:absolute;
       bottom:0;
-      line-height:2em;
+      line-height:2em; */
     }
     
     #vocMail{
@@ -78,4 +193,4 @@
       padding-bottom:2.22vw;
       margin:0 5.55vw;
     }
-    
+  }

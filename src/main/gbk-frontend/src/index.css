@@ -55,3 +55,24 @@ button::-moz-focus-inner {padding:0px;}
 ::-ms-clear { display: none !important; width : 0;  height: 0;}
 
 ::-ms-reveal {display: none;}
+
+body {
+    /* display: grid; */
+    /* justify-content: center; */
+    /* max-width:600px; */
+		background: gold;
+}
+#root {
+  /* display:grid; */
+  /* justify-content: center; */
+  /* grid-template-areas: "Header"
+                       "Content"
+                       "Footer";  */
+  /* width: 600px; */
+}
+
+@media(width:600px){
+  /* #root {
+    width:100%;
+  } */
+}

@@ -1,15 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import {Route, Routes} from 'react-router-dom'
 import GbkMain from "./components/gbkMain";
 import React from "react";
 
 function App() {
   return (
-    <div className="gbk">
-      <div className="gbk-main">
-        {/* React에서 사용자 정의 컴포넌트는 대문자로 시작해야함. */}
-        <GbkMain />
-      </div>
+    <div>
+        <Routes>
+          <Route exact path = "/" element={<GbkMain />} />
+          <Route path="/board" element={<GbkMain />} />
+        </Routes>  
     </div>
   );
 }
