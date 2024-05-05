@@ -2,6 +2,9 @@
 	body {
 		background: gold;
 	}
+	#container > div{
+		width:600px;
+	}
 }
 
 #container {
@@ -9,7 +12,7 @@
 }
 
 #container > div{
-	width:600px;
+	/* width:600px; */
 	background-color: #ffffff;
 	margin-left:auto;
 	margin-right:auto;
