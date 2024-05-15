@@ -1,12 +1,3 @@
-@media (min-width: 600px) {
-	body {
-		background: gold;
-	}
-	#container > div{
-		width:600px;
-	}
-}
-
 #container {
 	height:988px;
 }
@@ -17,12 +8,158 @@
 	margin-left:auto;
 	margin-right:auto;
 }
+#gbkMainAnimationContainer{
+	height: 306.67px;
+}
 
 #gbkMainAnimationTab {
+	display: grid;
+	grid-template-areas: "mainTab1 mainTab2"
+						 "mainAni  mainAni";
+	grid-template-columns: 1fr 1fr;
+	
+	padding-top:13.33px;
 	height: 266.67px;
-	margin-bottom:16.67px;
+}
+
+#gbkMainAnimationTab > div {
+	align-content: center;
+	text-align: -webkit-center;
+	letter-spacing: -1px;
+}
+
+#gbkMainDecrease{
+	font-size:25px;
+	font-weight: 700;
+	color:#848A92;
+	grid-area:mainTab1;
+}
+
+.decrease_image{
+	width: 27px;
+	opacity:0.6;
+}
+
+#gbkMainOld{
+	font-size:25px;
+	font-weight: 700;
+	color:#848A92;
+	grid-area:mainTab2;
+}
+
+.oldman_image{
+	width: 23px;
+	opacity:0.6;
+}
+
+
+#gbkMainAnimation{
+	grid-area: mainAni;
+	color:#E5483D;
+	font-size: 75px;
+	font-weight: 700;
+	letter-spacing: -1px;
+	width: 553.33px;
+	height: 120px;
+	margin: auto;
+	border: 8.334px solid #E5483D;
+	border-radius: 16.67px;
 }
 
 #gbkMainBoard {
 	height:722.23px;
+}
+#gbkMainBoardTitle{
+	height: 40px;
+	padding:40px 23.33px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	font-weight: 700;
+	letter-spacing: -1.25px;
+}
+
+#boardTitleBox{
+	font-size: 25px;
+	justify-self: left;
+}
+
+#boardMoreBox{
+	font-size: 21.67px;
+	justify-self: right;
+}
+
+.Joan-Wiliams{
+	padding: 0 23.33px;
+}
+
+
+
+@media (max-width: 600px) {
+	body {
+		background: gold;
+	}
+	#container {
+		height: 164.6667vw !important;
+	}
+
+	#container > div{
+		width:100%;
+	}
+	
+	#gbkMainAnimationContainer{
+		height: 51.1117vw;
+	}
+
+	#gbkMainAnimationTab{
+		padding-top:2.2217vw;
+		height: 44.4450vw;
+	}
+
+	#gbkMainAnimationTab > div {
+		letter-spacing: -0.1667vw;
+	}
+	#gbkMainDecrease{
+		font-size: 4.1667vw;
+	}
+	.decrease_image{
+		width: 4.5vw;
+	}
+
+	#gbkMainOld{
+		font-size: 4.1667vw;
+	}
+
+	.oldman_image{
+		width: 3.8333vw;
+	}
+	
+	#gbkMainAnimation{
+		font-size:12.5vw;
+		width:92.2217vw;
+		height: 20vw;
+		border: 1.3890vw solid #E5483D;
+		border-radius: 2.7783vw;
+	}
+
+	#gbkMainBoard{
+		height: 120.3717vw;
+	}
+
+	#gbkMainBoardTitle{
+		height: 6.6667vw;
+		padding: 6.6667vw 3.8889vw;
+		letter-spacing: -0.2083vw;
+	}
+
+	#boardTitleBox{
+		font-size: 4.1667vw;
+	}
+	
+	#boardMoreBox{
+		font-size: 3.6117vw;
+	}
+	.Joan-Wiliams{
+		padding: 0 3.8889vw;
+	}
 }

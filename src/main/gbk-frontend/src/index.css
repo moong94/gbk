@@ -32,7 +32,7 @@ iframe {width:100%; border:0px;}
 
 em, address, i {font-style:normal;}
 
-button, a, input, label, textarea {font-family:'Noto Sans KR','Spoqa Han Sans Neo', sans-serif;vertical-align:middle;}
+button, a, input, label, textarea {font-family: 'AppleSDGothicNeo-Regular','Malgun Gothic', '맑은 고딕', 'dotum', '돋움','Noto Sans KR','Spoqa Han Sans Neo', sans-serif;vertical-align:middle;text-decoration-line: none; color:#000000;}
 
 input {height:2.8125rem;padding:0 1rem;border:1px solid #eef0f4;background-color: #eef0f4; color:#333;font-weight:400;border-radius: .25rem;}
 
@@ -71,8 +71,18 @@ body {
   /* width: 600px; */
 }
 
-@media(width:600px){
+.contentsDivider{
+  background: #F2F5F9 !important;
+  height:16.67px;
+}
+
+@media(max-width:600px){
   /* #root {
     width:100%;
   } */
+  .contentsDivider{
+    
+		height: 2.7783vw;
+    background-color: #F2F5F9 !important;
+  }
 }

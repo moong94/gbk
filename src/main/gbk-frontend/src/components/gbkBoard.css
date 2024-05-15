@@ -10,19 +10,3 @@
 #container {
 	height:988px;
 }
-
-#container > div{
-	/* width:600px; */
-	background-color: #ffffff;
-	margin-left:auto;
-	margin-right:auto;
-}
-
-#gbkMainAnimationTab {
-	height: 266.67px;
-	margin-bottom:16.67px;
-}
-
-#gbkMainBoard {
-	height:722.23px;
-}
