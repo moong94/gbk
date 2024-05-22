@@ -29,21 +29,53 @@ function GbkMain() {
             <div id="boardMoreBox"><Link id="boardMore">더보기 <i class="fa-solid fa-angle-right"></i></Link></div>
           </div>
           <div>
-            <img class="Joan-Wiliams" src={require("../images/williams.jpg")} alt="Joan Williams said 'Korea is so screwed. Wow!'. You can link to board page."></img>
+            <Link id="boardLinkImg">
+              <img class="Joan-Wiliams" src={require("../images/williams.jpg")} alt="Joan Williams said 'Korea is so screwed. Wow!'. You can link to board page."></img>
+            </Link>
           </div>
         </div>
       </div>
-      <div id="decreaseModal">
-        <span>인구감소는 이렇게 계산했어요</span>
-        <span>대한민국 인구는 2024년 대비 2072년 15,528,772명이 줄어든다고 해요. 즉, 1분 37.48초에 1명 씩 인구가 줄어드는 거에요.</span>
-        <span>※ 이 계산은 출산인구 감소에 따른 인구감소 가속화를 고려하지 않은 단순계산으로 정확한 계산이 아니에요.</span>
-        <span>출처: KOSIS 국가통계포털 인구로보는대한민국</span>
-      </div>
-      <div id="oldModal">
-        <span>초고령사회 진입은 이렇게 계산했어요</span>
-        <span>초고령사회란 전체 인구에서 65세 이상이 차지하는 비율이 20% 이상인 사회로, 대한민국은 2025년 초고령사회로 진입한다고 해요.</span> 
-        <span>※ 초고령사회 진입은 고령인구 비율이 20.3%가 되는 2025년 7월 1일을 기준으로 계산했으며 정확한 계산이 아니에요.</span>
-        <span>출처: KOSIS 국가통계포털 인구로보는대한민국</span>
+      <div id="modalContainer">
+        <div id="decreaseModal" class="mainModal activeModal">
+          <div class="modalSubTitle">
+            <p class="modalSubTitleText">
+              인구감소는 이렇게 계산했어요
+            </p>
+            </div>
+          <div class="modalContents">
+            <p class="modalContentsText">
+              대한민국 인구는 2024년 대비 2072년 15,528,772명이 줄어든다고 해요.
+              <p class="modalContentsRedText">
+                즉, 1분 37.48초에 1명 씩 인구가 줄어드는 거에요.
+              </p>
+              <br />
+              ※ 이 계산은 출산인구 감소에 따른 인구감소 가속화를 고려하지 않은 단순계산으로 정확한 계산이 아니에요.
+              <br />
+              <br />
+              출처: KOSIS 국가통계포털 인구로보는대한민국
+            </p>
+          </div>
+          <div class="modalConfirmButton">
+            확인
+          </div>
+        </div>
+        <div id="oldModal" class="mainModal">
+          <div class="modalSubTitle">
+            <p class="modalSubTitleText">
+              초고령사회 진입은 이렇게 계산했어요
+            </p>
+          </div>
+          <div class="modalContents">
+            <p class="modalContentsText">
+              초고령사회란 전체 인구에서 65세 이상이 차지하는 비율이 20% 이상인 사회로, 대한민국은 2025년 초고령사회로 진입한다고 해요.
+              <br /> 
+              ※ 초고령사회 진입은 고령인구 비율이 20.3%가 되는 2025년 7월 1일을 기준으로 계산했으며 정확한 계산이 아니에요.
+              <br />
+              <br />
+              출처: KOSIS 국가통계포털 인구로보는대한민국
+            </p>
+          </div>
+        </div>
       </div>
 {/*       <div className="gbk-animation-tab">
          {this.gbk-animation}
