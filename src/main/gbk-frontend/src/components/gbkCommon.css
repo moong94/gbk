@@ -55,6 +55,7 @@
   border-radius:10px;
   min-width: max-content;
   margin-right:13.33px;
+  cursor:pointer;
 }
 
 #mainNavMenuBtn{

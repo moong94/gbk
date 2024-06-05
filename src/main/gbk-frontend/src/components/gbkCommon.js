@@ -5,19 +5,21 @@ import './gbkCommon.css';
 
 /* 공통영역-Header */
 export class GbkHeader extends React.Component {
+
+  
   render(){
     return(
       <div id ="mainHeaderSticky">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
         <div id = "mainHeaderPosition">
           <div id="mainHeader">
-            <h2 class="headerTitle">Goodbye <span class="headerKorea">Korea</span></h2>
+            <h2 className="headerTitle">Goodbye <span className="headerKorea">Korea</span></h2>
             <div id="headerContents">
               <div id="saveKorea">
-                <i class="fa-regular fa-heart"></i> 대한민국 구하기
+                <i className="fa-regular fa-heart"></i> 대한민국 구하기
               </div>
-              <div id="mainNavMenuBtn" onclick="openNavMenu()">
-                <i class="fa-solid fa-bars"></i>
+              <div id="mainNavMenuBtn" onClick="openNavMenu()">
+                <i className="fa-solid fa-bars"></i>
               </div>
             </div>
           </div>

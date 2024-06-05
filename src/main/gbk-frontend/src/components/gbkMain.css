@@ -9,7 +9,7 @@
 	margin-right:auto;
 }
 #gbkMainAnimationContainer{
-	height: 306.67px;
+	height: 266.67px;
 }
 
 #gbkMainAnimationTab {
@@ -34,14 +34,27 @@
 	border-bottom: 3.33px solid #333A40;
 }
 
-.activeTab>img{
+.activeTab>.decrease_image{
+	content:url(../images/decrease.png);
 	opacity:1 !important;
 }
+
+.activeTab>.oldman_image{
+	content:url(../images/old_man.png);
+	opacity:1 !important;
+}
+
 #gbkMainDecrease:hover, #gbkMainOld:hover{
 	color:#333A40;
 }
 
-#gbkMainAnimationTab > div:hover img{
+#gbkMainAnimationTab > div:hover .decrease_image{
+	content:url(../images/decrease.png);
+	opacity:1;
+}
+
+#gbkMainAnimationTab > div:hover .oldman_image{
+	content:url(../images/old_man.png);
 	opacity:1;
 }
 
@@ -54,7 +67,6 @@
 
 .decrease_image{
 	width: 27px;
-	opacity:0.6;
 }
 
 #gbkMainOld{
@@ -66,7 +78,6 @@
 
 .oldman_image{
 	width: 23px;
-	opacity:0.6;
 }
 
 
@@ -91,12 +102,14 @@
 	font-size: 70px;
 	font-weight: 700;
 	letter-spacing: -1.25px !important;
-	width:600px;
-    margin-left: -33.33px;
+	width: 532.33px;
+	height: 120px;
+	/* margin:auto; */
+    /* margin-left: -33.33px; */
 }
 
 #Days{
-	font-size:33.33px;
+	/* font-size:33.33px; */
 }
 
 .activeAnimation{
@@ -176,6 +189,7 @@
 }
 
 .modalContentsRedText{
+	display:inline;
 	color:#E5483D;
 }
 
