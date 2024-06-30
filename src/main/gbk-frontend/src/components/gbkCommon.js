@@ -1,12 +1,29 @@
 import React from 'react'
 import './gbkCommon.css';
+import { Link } from 'react-router-dom';
 
 // class Component
 
 /* 공통영역-Header */
 export class GbkHeader extends React.Component {
 
-  
+  constructor (props){
+    super(props);
+
+    this.state={
+      isMenuActive : false
+    };
+
+  }
+
+  mainSideMenu = () =>{
+    this.setState(prevState=>({isMenuActive:true}));
+  }
+
+  mainSideMenuClose = () => {
+    this.setState(prevState=>({isMenuActive:false}));
+  }
+
   render(){
     return(
       <div id ="mainHeaderSticky">
@@ -18,15 +35,24 @@ export class GbkHeader extends React.Component {
               <div id="saveKorea">
                 <i className="fa-regular fa-heart"></i> 대한민국 구하기
               </div>
-              <div id="mainNavMenuBtn" onClick="openNavMenu()">
-                <i className="fa-solid fa-bars"></i>
+              <div id="mainNavMenuBtn">
+                <i className="fa-solid fa-bars" onClick={() => this.mainSideMenu()}></i>
               </div>
             </div>
           </div>
         </div>
+        <div id="mainNavContainerBox" style={{display: this.state.isMenuActive ? "block" : "none"}} onClick={() => this.mainSideMenuClose()}></div>
+        <div id="mainNavContainer" style={{display: this.state.isMenuActive ? "grid" : "none"}}>
+          <div id="mainNavExcept" onClick={() => this.mainSideMenuClose()}></div>
           <div id="mainNavMenu">
-          </div>
+          <i class="fa-solid fa-x menuXMark" onClick={() => this.mainSideMenuClose()}></i>
+            <div className="linkText linkToBoard"><Link id="board">게시판 <i className="fa-solid fa-angle-right"></i></Link></div>
+            <div className="linkText linkToFuture"><Link id="future">다가올 미래 <i className="fa-solid fa-angle-right"></i></Link></div>
+            <div className="linkText linkToSave"><Link id="save">대한민국 구하기 <i className="fa-solid fa-angle-right"></i></Link></div>
+          </div>          
+        </div>
       </div>  
+      
     )
   }    
 }

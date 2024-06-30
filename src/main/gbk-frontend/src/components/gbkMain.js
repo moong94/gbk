@@ -9,7 +9,12 @@ class GbkMain extends React.Component{
   constructor (props){
     super(props);
 
-    this.state={}
+    this.state={
+      isModalActive : false
+    };
+    
+    // 메서드를 현재 인스턴스에 바인딩
+    this.handleDocumentClick = this.handleDocumentClick.bind(this);
   }
 
   // 컴포넌트가 마운트 될 때 이벤트 위임: document에 클릭 이벤트 리스너 추가
@@ -26,8 +31,21 @@ class GbkMain extends React.Component{
     const getId = event.target.id;
     const getClass = event.target.className;
 
+    let getClassString;
+
+    // SVGAnimatedString 객체인지 확인하고 문자열로 변환합니다.
+    if (typeof getClass === 'object' && getClass.baseVal !== undefined) {
+        getClassString = getClass.baseVal; // 또는 getClass.animVal
+    } else if (typeof getClass === 'string') {
+        getClassString = getClass;
+    } else {
+      console.error("클래스 이름을 읽을 수 없습니다.");
+      return;
+    }
+
+    console.log(getId + "," + getClass);
     // 메인화면 탭 전환
-    if(getClass.includes('gbkMainTab')){
+    if(getClassString.includes('gbkMainTab')){
       if(getId === 'gbkMainDecrease'){
         document.getElementById('gbkMainOld').classList.remove('activeTab');
         document.getElementById('gbkMainDecrease').classList.add('activeTab');
@@ -40,7 +58,28 @@ class GbkMain extends React.Component{
         document.getElementById('gbkMainAnimationDecrease').classList.remove('activeAnimation');
       }
     }
+
+    if(getId === 'modalContainer'){
+      this.setState({isModalActive:false});
+    }
+    console.log(getId + "," + getClass);
   };
+
+  modalActive = (clickedAnimation) => {
+    this.setState(prevState=>({isModalActive:true}));
+    
+    if(clickedAnimation === 'decrease'){
+      document.getElementById('oldModal').classList.remove('activeModal');
+      document.getElementById('decreaseModal').classList.add('activeModal');
+    } else if (clickedAnimation === 'old'){
+      document.getElementById('oldModal').classList.add('activeModal');
+      document.getElementById('decreaseModal').classList.remove('activeModal');
+    }
+  }
+
+  modalDeactive = () => {
+    this.setState(prevState=>({isModalActive:false}));
+  }
 
   render() {
   return (
@@ -50,13 +89,16 @@ class GbkMain extends React.Component{
         <div id="gbkMainAnimationContainer">
           <div id="gbkMainAnimationTab">
             <div id="gbkMainDecrease" className="gbkMainTab activeTab">인구감소<img className="decrease_image" src={require("../images/decrease_opacity.png")} alt="decreasing icon"></img></div>
-            {/* <div id="gbkMainOld" onClick={addActiveTab}>초고령사회 진입<img class="oldman_image" src={require("../images/old_man_opacity.png")} alt="old man icon"></img></div> */}
             <div id="gbkMainOld" className="gbkMainTab" >초고령사회 진입<img className="oldman_image" src={require("../images/old_man_opacity.png")} alt="old man icon"></img></div>
-            <div id="gbkMainAnimationDecrease" className="activeAnimation">
-              51,751,065 명
+           <div id="gbkMainAnimationDecreaseContainer" className="activeAnimation" onClick={() => this.modalActive('decrease')}>
+              <svg viewBox="0 0 532.33 120" id="gbkMainAnimationDecrease" className="activeAnimation" onClick={() => this.modalActive('decrease')}>
+                <path stroke="#E5483D" className="rectPath" onClick={() => this.modalActive('decrease')}/>
+                <text className="gbkMainAnimationDecreaseText">51,751,065 명</text>
+              </svg>
             </div>
-            <div id="gbkMainAnimationOld">
-              182<span id="Days"> Days</span> 07:03:28:98
+            <div id="gbkMainAnimationOld" onClick={() => this.modalActive('old')}>
+              182<span class="smallText"> Days</span><br />
+              07<span class="smallText">h</span>03<span class="smallText">m</span>28<span class="smallText">s</span>98<span class="smallText">ss</span>
             </div>
           </div>
         </div>
@@ -73,8 +115,8 @@ class GbkMain extends React.Component{
           </div>
         </div>
       </div>
-    {/*  <div id="modalContainer">
-        <div id="decreaseModal" className="mainModal activeModal">
+    <div id="modalContainer" style={{display: this.state.isModalActive ? "flex" : "none"}}>
+        <div id="decreaseModal" className="mainModal">
           <div className="modalSubTitle">
             <p className="modalSubTitleText">
               인구감소는 이렇게 계산했어요
@@ -94,7 +136,7 @@ class GbkMain extends React.Component{
               출처: KOSIS 국가통계포털 인구로보는대한민국
             </p>
           </div>
-          <div className="modalConfirmButton">
+          <div className="modalConfirmButton" onClick={() => this.modalDeactive()}>
             확인
           </div>
         </div>
@@ -118,12 +160,12 @@ class GbkMain extends React.Component{
               출처: KOSIS 국가통계포털 인구로보는대한민국
             </p>
           </div>
-          <div className="modalConfirmButton">
+          <div className="modalConfirmButton" onClick={() => this.modalDeactive()}>
             확인
           </div>
         </div>
       </div>
-      */}
+      
 {/*       <div className="gbk-animation-tab">
          {this.gbk-animation}
       </div>
