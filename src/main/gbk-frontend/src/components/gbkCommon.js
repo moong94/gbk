@@ -30,10 +30,12 @@ export class GbkHeader extends React.Component {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></link>
         <div id = "mainHeaderPosition">
           <div id="mainHeader">
-            <h2 className="headerTitle">Goodbye <span className="headerKorea">Korea</span></h2>
+            <h2 className="headerTitle"><Link to="/">Goodbye <span className="headerKorea">Korea</span></Link></h2>
             <div id="headerContents">
               <div id="saveKorea">
-                <i className="fa-regular fa-heart"></i> 대한민국 구하기
+                <Link to="/save">
+                  <i className="fa-regular fa-heart"></i> 대한민국 구하기
+                </Link>
               </div>
               <div id="mainNavMenuBtn">
                 <i className="fa-solid fa-bars" onClick={() => this.mainSideMenu()}></i>
@@ -46,9 +48,9 @@ export class GbkHeader extends React.Component {
           <div id="mainNavExcept" onClick={() => this.mainSideMenuClose()}></div>
           <div id="mainNavMenu">
           <i class="fa-solid fa-x menuXMark" onClick={() => this.mainSideMenuClose()}></i>
-            <div className="linkText linkToBoard"><Link id="board">게시판 <i className="fa-solid fa-angle-right"></i></Link></div>
-            <div className="linkText linkToFuture"><Link id="future">다가올 미래 <i className="fa-solid fa-angle-right"></i></Link></div>
-            <div className="linkText linkToSave"><Link id="save">대한민국 구하기 <i className="fa-solid fa-angle-right"></i></Link></div>
+            <div className="linkText linkToBoard"><Link to="/board">게시판 <i className="fa-solid fa-angle-right"></i></Link></div>
+            <div className="linkText linkToFuture"><Link to="/future">다가올 미래 <i className="fa-solid fa-angle-right"></i></Link></div>
+            <div className="linkText linkToSave"><Link to="/save">대한민국 구하기 <i className="fa-solid fa-angle-right"></i></Link></div>
           </div>          
         </div>
       </div>  
