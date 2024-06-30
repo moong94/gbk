@@ -1,12 +1,245 @@
-@media (min-width: 600px) {
-	body {
-		background: red;
-	}
-	#container > div{
-		width:600px;
-	}
+
+#saveTopContents{
+	height:440px;
 }
 
-#container {
-	height:988px;
+#koreanFlagContainer{
+	width:600px;
+	height:400px;
+	background-color: #151C22;
+	margin-left:auto;
+	margin-right:auto;
+	background-image: url("../images/korean_flag.png");
+	background-repeat : no-repeat;
+	background-size : cover;
+	margin-bottom:40px;
+}
+
+.koreanFlagMainText{
+	font-weight:700;
+	font-size:46.67px;
+	letter-spacing: -1px;
+	line-height:66.67px;
+	text-align:center;
+	padding-top:90px;
+	word-break: keep-all;
+}
+
+#koreanFlagText{
+	background-color:#151C22;
+	color: #FFFFFF;
+	width:100%;
+	height:100%;
+	opacity:0.8;
+}
+
+.linkToPetitions{
+	padding-top:70px;
+	text-align:center;
+}
+
+#petitions{
+	color:#FFFFFF;
+	font-weight:700;
+	font-size:23.33px;
+	letter-spacing: -1.25px;
+}
+
+#saveBottomContents{
+	padding:0 40px;
+	height:532.34px;
+}
+
+.saveBottomTitle{
+	padding-top:40px;
+	font-size:30px;
+	font-weight:700;
+	letter-spacing: -1px;
+	text-align: center;
+}
+
+.saveBottomText{
+	font-size:25px;
+	font-weight:700;
+	line-height:40px;
+	letter-spacing: -1.25px;
+	color:#1056C3;
+	margin: 26.67px 0;
+}
+
+.accountImg{
+	background-color:#151C22;
+	color:#FFFFFF;
+	font-size:25px;
+	font-weight:700;
+	line-height:23.33px;
+	letter-spacing: -1.25px;
+	width:125px;
+	height:50px;
+	border-radius:25px;
+	align-content:center;
+	text-align: center;
+}
+
+.accountNumber{
+	display: inline-block;
+	cursor: pointer;
+	line-height:40px;
+	padding-top:13.33px;
+	font-size:25px;
+	font-weight:700;
+	letter-spacing: -1.25px;
+	text-decoration-line: underline;
+}
+
+.copyImage{
+	width:25px;
+}
+
+.accountUserName{
+	line-height:40px;
+	font-size:25px;
+	font-weight:700;
+	letter-spacing: -1.25px;
+	color:#686E75;
+}
+
+.kakaoPayImg{
+	margin-top:40px;
+	width:125px;
+	height:50px;
+	background-image: url("../images/kakaoPay_img.png");
+	background-repeat : no-repeat;
+	background-size : cover;
+}
+
+.linkToKakao{
+	cursor: pointer;
+	line-height:40px;
+	padding-top:13.33px;
+	font-size:25px;
+	font-weight:700;
+	letter-spacing: -1.25px;
+	text-decoration-line: underline;
+}
+
+#copyToastPopup{
+	width:573.33px;
+	height:93.33px;
+	border-radius:13.33px;
+	background: #333A40F2;
+	opacity:0.95;
+	color:#FFFFFF;
+	position:fixed;
+	bottom:33.33px;
+	left: 50%;
+	transform: translateX( -50% );
+	padding-left:26.67px;
+	align-content: center;
+	font-size:25px;
+	letter-spacing: -1.25px;
+}
+
+@media (max-width: 600px) {
+	body {
+
+	}
+	#container > div{
+		/* width:600px; */
+	}
+
+	#saveTopContents{
+		height:73.3333vw;
+	}
+	
+	#koreanFlagContainer{
+		width:100vw;
+		height:66.6667vw;
+		margin-bottom:6.6667vw;
+	}
+	
+	.koreanFlagMainText{
+		font-size:7.7783vw;
+		letter-spacing: -0.1667vw;
+		line-height:11.1117vw;
+		padding-top:15vw;
+	}
+	
+	
+	.linkToPetitions{
+		padding-top:70vw;
+	}
+	
+	#petitions{
+		font-size:3.8883vw;
+		letter-spacing: -0.2083vw;
+	}
+	
+	#saveBottomContents{
+		padding:0 6.6667vw;
+		height:532.34px;
+	}
+	
+	.saveBottomTitle{
+		padding-top:6.6667vw;
+		font-size:5vw;
+		letter-spacing: -0.1667vw;
+		text-align: center;
+	}
+	
+	.saveBottomText{
+		font-size:4.1667vw;
+		line-height:6.6667vw;
+		letter-spacing: -0.2083vw;
+		margin: 4.4450vw 0;
+	}
+	
+	.accountImg{
+		font-size:4.1667vw;
+		line-height:3.8883vw;
+		letter-spacing: -0.2083vw;
+		width:20.8333vw;
+		height:8.3333vw;
+		border-radius:4.1667vw;
+	}
+	
+	.copyImage{
+		width:4.1667vw;
+	}
+
+	.accountNumber{
+		line-height:6.6667vw;
+		padding-top:2.2217vw;
+		font-size:4.1667vw;
+		letter-spacing: -0.2083vw;
+	}
+	
+	.accountUserName{
+		line-height:6.6667vw;
+		font-size:4.1667vw;
+		letter-spacing: -0.2083vw;
+	}
+	
+	.kakaoPayImg{
+		margin-top:6.6667vw;
+		width:20.8333vw;
+		height:8.3333vw;
+	}
+	
+	.linkToKakao{
+		line-height:6.6667vw;
+		padding-top:2.2217vw;
+		font-size:4.1667vw;
+		letter-spacing: -0.2083vw;
+	}
+
+	#copyToastPopup{
+		width:95.5550vw;
+		height:15.5550vw;
+		border-radius:2.2217vw;
+		bottom:5.5550vw;
+		padding-left:4.4450vw;
+		font-size:4.1667vw;
+		letter-spacing: -0.2083vw;
+	}
 }
