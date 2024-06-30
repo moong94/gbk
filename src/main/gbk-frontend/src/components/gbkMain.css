@@ -80,19 +80,52 @@
 	width: 23px;
 }
 
+#gbkMainAnimationDecreaseContainer{
+	display:none;
+	grid-area: mainAni;
+	width:532.33px;
+	height:120px;
+	margin: auto;
+}
 
 #gbkMainAnimationDecrease{
 	display:none;
-	grid-area: mainAni;
-	color:#E5483D;
+    width:100%;
+ 	height:100%;
+  	stroke-width:16.668px;
+  	vector-effect:non-scaling-stroke;
+  	fill:none;
+}
+
+#gbkMainAnimationDecrease>path{
+	d: path(
+    "M 266.165 0 L 0 0 L 0 120 L 532.33 120 L 532.33 0 L 266.165 0"
+  );
+}
+.rectPath{
+	stroke-dasharray: 1304.66;
+	stroke-dashoffset: 1304.66;
+	animation: draw 3s linear infinite;
+	transform-origin: center;
+	transform: scale(-1, 1);
+}
+
+.gbkMainAnimationDecreaseText{
+	fill:#E5483D;
 	font-size: 75px;
 	font-weight: 700;
 	letter-spacing: -1px;
-	width: 532.33px;
-	height: 120px;
-	margin: auto;
-	border: 8.334px solid #E5483D;
-	border-radius: 16.67px;
+  	text-anchor:middle;
+  	alignment-baseline:middle; 
+  	transform:translate(50%,68.334px);
+}
+@keyframes draw {
+	0% {
+		stroke-dasharray: 1304.66 0;
+	}
+	100% {
+		stroke-dasharray: 0 1304.66;
+	}
 }
 
 #gbkMainAnimationOld{
@@ -104,12 +137,10 @@
 	letter-spacing: -1.25px !important;
 	width: 532.33px;
 	height: 120px;
-	/* margin:auto; */
-    /* margin-left: -33.33px; */
 }
 
-#Days{
-	/* font-size:33.33px; */
+.smallText{
+	font-size:33.33px;
 }
 
 .activeAnimation{
@@ -206,6 +237,7 @@
 	top:480px;
 	font-size:28.33px;
 	font-weight:700;
+	cursor:pointer;
 }
 
 .activeModal{
@@ -223,7 +255,7 @@
 	}
 	
 	#gbkMainAnimationContainer{
-		height: 51.1117vw;
+		height: 44.4450vw;
 	}
 
 	#gbkMainAnimationTab{
@@ -253,22 +285,23 @@
 		width: 3.8333vw;
 	}
 	
-	#gbkMainAnimationDecrease{
-		font-size:12.5vw;
+	#gbkMainAnimationDecreaseContainer{
 		width:88.7217vw;
-		height: 20vw;
-		border: 1.3890vw solid #E5483D;
-		border-radius: 2.7783vw;
+		height:20vw;
 	}
-
+	
+	#gbkMainAnimationDecrease{
+		stroke-width:2.7780vw;
+	}
+	
 	#gbkMainAnimationOld{
 		font-size: 11.6667vw;
 		letter-spacing: -0.2083vw !important;
-		width:100vw;
-		margin-left:-5.5550vw;
+		width:88.7217vw;
+		height:20vw;
 	}
 	
-	#Days{
+	.smallText{
 		font-size:5.5550vw;
 	}
 	#gbkMainBoard{
