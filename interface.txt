@@ -1,0 +1,397 @@
+**입력 : request에 해당
+**출력 : response에 해당
+
+==================================================
+
+SignIn (로그인) - 게시글 수정/삭제시 아닌 본인 작성글/댓글에 대한 확인절차
+
+- request 
+
+{
+    randomIP : String
+    password : String
+}
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : "Success."
+    token : "jwt.."
+    expiredDate : 숫자형태로
+}
+
+2. 실패
+- 로그인 실패
+Http Status - 401 (Unauthorized/인증실패)
+{
+    code : "SF"
+    message : "Sign In Failed."
+}
+
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+
+==================================================
+
+signUp (회원가입) - 게시글/댓글 작성시 랜덤닉네임, IP할당
+
+- request
+
+{
+    randomID : String
+    randomIP : String
+    password : String
+}
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : "Success."
+}
+
+2. 실패
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+
+==================================================
+
+currentList (최신 게시물 리스트) - 게시판 기본화면
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : "Success"
+    currentList : BoardListItem[]
+}
+
+BoardListItem
+{
+    boardNumber : int  //게시글 클릭시 상세보기페이지로 이동을 위한 구분자
+    title : String
+    content : String
+    boardTitleImage : String
+    favoriteCount : int  
+    writeDatetime : String
+    writerNickname : String
+}
+
+2. 실패
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+
+
+==================================================
+
+searchList (검색 게시믈 리스트)
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : "Success"
+    searchList : BoardListItem[]
+}
+
+BoardListItem
+{
+    boardNumber : int  //게시글 클릭시 상세보기페이지로 이동을 위한 구분자
+    title : String
+    content : String
+    boardTitleImage : String
+    favoriteCount : int
+    writeDatetime : String
+    writerNickname : String
+}
+
+2. 실패
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+
+==================================================
+
+boardDetail (게시물 상세보기)
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : "Success"
+    boardNumber : int  //게시글 클릭시 상세보기페이지로 이동을 위한 구분자
+    title : String
+    content : String
+    boardImage : String[]
+    favoriteCount : int
+    writeDatetime : String
+    writerNickname : String
+}
+
+2. 실패
+- 존재하지 않는 게시물
+Http Status - 400 (Bad Request)
+{
+    code : "NB" (Not exist Board Number)
+    message : "No Existed Board Number"
+}
+
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+
+==================================================
+
+putFavorite (좋아요 기능)  //response 성공시 좋아요 개수만 올라가고 다른 팝업X
+
+- request
+
+{
+    boardNumber : int
+}
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : "Success."
+}
+
+2. 실패
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+
+==================================================
+
+commentList (댓글 리스트)
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : Success."
+    commentList : commentListItem[]
+}
+
+commentListItem{
+    nickname : String
+    randomIP : String
+    writeDatetime : String
+    content : String
+}
+
+2. 실패
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+
+==================================================
+
+postComment (댓글 쓰기)
+
+- request
+
+{
+    content : String
+}
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : "Success."
+}
+
+
+2. 실패
+- 존재하지 않는 게시물
+Http Status - 400 (Bad Request)
+{
+    code : "NB" (Not exist Board)
+    message : "No Existed Board"
+}
+
+- 존재하지 않는 유저
+Http Status - 400 (Bad Request)
+{
+    code : "NU"
+    message : "No Existed User"
+}
+
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+
+
+==================================================
+
+boardDelete (게시글 삭제)
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : "Success."
+}
+
+2. 실패
+- 존재하지 않는 게시물
+Http Status - 400 (Bad Request)
+{
+    code : "NB" (Not exist Board)
+    message : "No Existed Board"
+}
+
+- 존재하지 않는 유저
+Http Status - 400 (Bad Request)
+{
+    code : "NU"
+    message : "No Existed User"
+}
+
+- 권한 없음
+Http Status - 403 (Forbidden)
+{
+    code : "NP"
+    message : "No Permission"
+}
+
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+
+==================================================
+
+boardWrite (게시글 쓰기)
+
+- request
+{
+    title : String
+    content : String
+    boardImageList : String
+}
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : "Success."
+}
+
+2. 실패
+
+- 존재하지 않는 유저
+Http Status - 400 (Bad Request)
+{
+    code : "NU"
+    message : "No Existed User"
+}
+
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+==================================================
+
+boardUpdate (게시글 수정)
+
+- request
+{
+    title : String
+    content : String
+    boardImageList : String[]
+}
+
+- response
+
+1. 성공
+Http Status - 200 (OK)
+{
+    code : "SU"
+    message : "Success."
+}
+
+2. 실패
+- 존재하지 않는 게시물
+Http Status - 400 (Bad Request)
+{
+    code : "NB" (Not exist Board)
+    message : "No Existed Board"
+}
+
+- 존재하지 않는 유저
+Http Status - 400 (Bad Request)
+{
+    code : "NU"
+    message : "No Existed User"
+}
+
+- 권한 없음
+Http Status - 403 (Forbidden)
+{
+    code : "NP"
+    message : "No Permission"
+}
+
+- 데이터베이스 에러
+Http Status - 500 (Internal Server Error)
+{
+    code : "DE"
+    message : String("데이터베이스 오류가 발생하였습니다.")
+}
+
+==================================================
