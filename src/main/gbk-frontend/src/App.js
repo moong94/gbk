@@ -1,7 +1,7 @@
 import './App.css';
 import {Route, Routes} from 'react-router-dom'
 import GbkMain from "./components/gbkMain";
-import GbkBoard from "./components/gbkBoard";
+import GbkBoard from "./components/gbkBoard.tsx";
 import GbkFuture from "./components/gbkFuture";
 import GbkSave from "./components/gbkSave";
 import React, { Component } from "react";

@@ -105,11 +105,11 @@ class GbkMain extends React.Component{
         <div className="contentsDivider"></div>
         <div id="gbkMainBoard">
           <div id="gbkMainBoardTitle">
-            <div id="boardTitleBox"><Link id="boardTitle">게시판</Link></div>
-            <div id="boardMoreBox"><Link id="boardMore">더보기 <i className="fa-solid fa-angle-right"></i></Link></div>
+            <div id="boardTitleBox"><Link to="/board">게시판</Link></div>
+            <div id="boardMoreBox"><Link to="/board">더보기 <i className="fa-solid fa-angle-right"></i></Link></div>
           </div>
           <div>
-            <Link id="boardLinkImg">
+            <Link to="/board">
               <img className="Joan-Wiliams" src={require("../images/williams.jpg")} alt="Joan Williams said 'Korea is so screwed. Wow!'. You can link to board page."></img>
             </Link>
           </div>
