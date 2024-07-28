@@ -18,6 +18,8 @@ import lombok.RequiredArgsConstructor;
 @Component
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter{
+    //userRepository 및 user Entity 작업 후 주석 풀 예정
+    //private final UserRepository UserRepository;
     private final JwtProvider jwtProvider;
     
     @Override
@@ -40,10 +42,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
                     if(random_ip == null){
                         filterChain.doFilter(request, response);
                         return;
-                    }
+                    }                    
 
 
-                    //위 두 검증 작업을 지나면
+                    /*이 이후는 
+                    
+                        userRepository 및 user Entity 작업 후 추가예정
+                    
+                    */
+                    
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }
