@@ -1,5 +1,5 @@
 #container {
-	height:988px;
+	min-height:988px;
 }
 
 #container > div{
