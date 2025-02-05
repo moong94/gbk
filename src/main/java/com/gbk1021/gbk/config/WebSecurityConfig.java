@@ -1,6 +1,8 @@
 package com.gbk1021.gbk.config;
 
 import java.io.IOException;
+import java.util.List;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -44,6 +46,7 @@ public class WebSecurityConfig {
             )
             .authorizeHttpRequests(request -> request
                 .requestMatchers("/", "/api/v1/auth/**").permitAll()
+                .requestMatchers("/**").permitAll()
                 .requestMatchers("/api/v1/user/**").hasRole("USER")
                 .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
@@ -59,6 +62,7 @@ public class WebSecurityConfig {
     @Bean
     protected CorsConfigurationSource corsConfigrationSource(){
         CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(List.of("http://localhost:3000"));
         configuration.addAllowedHeader("*");
         configuration.addAllowedMethod("*");
         configuration.addAllowedHeader("*");

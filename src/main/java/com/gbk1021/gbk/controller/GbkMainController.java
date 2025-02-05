@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 public class GbkMainController {
     
     @RequestMapping(value = "/")
-    public String gbkMain(String inpiut) {
+    public String gbkMain() {
         log.debug("============Main 페이지===========");
         return "GBKmain페이지";
     }

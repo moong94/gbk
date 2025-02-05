@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.4ace8998.css",
-    "main.js": "/static/js/main.c92ff973.js",
+    "main.css": "/static/css/main.955824ad.css",
+    "main.js": "/static/js/main.409e617e.js",
     "static/js/453.538af5c6.chunk.js": "/static/js/453.538af5c6.chunk.js",
     "static/media/williams.jpg": "/static/media/williams.559c67a465f127109c68.jpg",
     "static/media/korean_flag.png": "/static/media/korean_flag.e59f0b046d2c94774b9c.png",
     "static/media/copy_image.png": "/static/media/copy_image.a5d136fe3bf5c323c1ea.png",
     "index.html": "/index.html",
-    "main.4ace8998.css.map": "/static/css/main.4ace8998.css.map",
-    "main.c92ff973.js.map": "/static/js/main.c92ff973.js.map",
+    "main.955824ad.css.map": "/static/css/main.955824ad.css.map",
+    "main.409e617e.js.map": "/static/js/main.409e617e.js.map",
     "453.538af5c6.chunk.js.map": "/static/js/453.538af5c6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ace8998.css",
-    "static/js/main.c92ff973.js"
+    "static/css/main.955824ad.css",
+    "static/js/main.409e617e.js"
   ]
 }
