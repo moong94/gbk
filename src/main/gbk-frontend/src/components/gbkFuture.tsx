@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { GbkFooter, GbkHeader } from './gbkCommon'
 import './gbkFuture.css'
+import handleGBKFutureResultData from "./gbkFutureResult.tsx"
 
 // functional Component
 function GbkFuture() {
@@ -205,9 +206,28 @@ function GbkFuture() {
   const handleGBKFutureResultClick = (event) => {
     event.preventDefault();
     if(futureCountable){
+      const eduElement = document.getElementById("edu") as HTMLInputElement;
+      const eduValue = eduElement.value;
+      const jobElement = document.getElementById("job") as HTMLInputElement;
+      const jobValue = jobElement.value;
+
+      const gbkFutureData = {
+        sex : selectedGender,
+        year : year.replace(/\D/g,""),
+        month : month.replace(/\D/g,""),
+        day : day.replace(/\D/g,""),
+        career: career.replace(/\D/g,""),
+        pay : pay.replace(/\D/g,""),
+        edu : eduValue,
+        job : jobValue
+      }
+      console.log(gbkFutureData);
+      
+      handleGBKFutureResultData(gbkFutureData);
       setIsResultDisplayed(true);
     }
   };
+
 
   return (
     <div>

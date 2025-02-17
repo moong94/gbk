@@ -6,21 +6,24 @@ import axios from 'axios'
 // functional Component
 function GbkBoard() {
 
-  const [example,setExample] = useState('')
+  // const [example,setExample] = useState([])
 
-  useEffect(() => {
-    axios.get('/users')
-    .then(response => setExample(response.data[0].userId))
-    .catch(error => console.log(error))
-  }, []
-);
+//   useEffect(() => {
+//     axios.get('/users')
+//     .then(response => {
+//       console.log(response.data[0].userId);
+//       setExample(response.data[0].userId);
+//     })
+//     .catch(error => console.log(error))
+//   }, []
+// );
   
   return (
     <div>
       <GbkHeader />
       <div id="container">
         <div id="gbkMainAnimationTab">
-          게시판 : {example}
+          게시판 {/* 게시판 : {example} */}
         </div>
         <div id="gbkMainBoard">
           게시판 컨텐츠
