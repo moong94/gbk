@@ -33,9 +33,9 @@ function GbkBoard() {
       }
     }
 
-    if (getId === 'modalContainer') {
-      setIsModalActive(false);
-    }
+    // if (getId === 'modalContainer') {
+    //   setIsModalActive(false);
+    // }
   };
   // const [example,setExample] = useState([])
 
@@ -55,34 +55,42 @@ function GbkBoard() {
       <div id="container">
         <div id="gbkBoardContainer">
           <div id="gbkBoardContainerTab">
-            <div id="gbkBoardAll" className="gbkBoardTab activeTab">전체</div>
-            <div id="gbkBoardFavorite" className="gbkBoardTab" >인기</div>
+            <div id="gbkBoardAll" className="gbkBoardTab activeTab" onClick={handleDocumentClick}>전체</div>
+            <div id="gbkBoardFavorite" className="gbkBoardTab" onClick={handleDocumentClick}>인기</div>
             
             
           </div>
         </div>
         <div id="gbkBoardContents">
-              게시판 컨텐츠1{/* 게시판 : {example} */}
-              <br />
-              게시판 컨텐츠2{/* 게시판 : {example} */}
-              <br />
-              게시판 컨텐츠3{/* 게시판 : {example} */}
-              <br />
-              게시판 컨텐츠4{/* 게시판 : {example} */}
-              <br />
+          <div className="gbkBoardContentsTop">
+            <div className="topImage">말풍선이미지</div>
+            <div className="topUserInfo">
+              <div className="topUserNickname">닉네임{/* {nickname} */}</div>
+              <div className="topUserIP">(xxx.xxx){/* {ip} */}</div>
+            </div>
+            <div className="topCreationTime">작성시간</div>
+          </div>
+          <div className="gbkBoardContentsMain">
+            <div className="mainTitle">글 제목</div>
+            <div className="mainSubstring">글 내용 최대 두 줄</div>
+            <div className="mainThumbnail">썸네일 이미지</div>
+          </div>
+          <div className="gbkBoardContentsBottom">
+            <div className="bottomLike">좋아요</div>
+            <div className="bottomComment">댓글</div>
+            <div className="bottomShare">공유</div>
+          </div>
               스크립트로 DB에 연동된 게시물 들 상위 10개 항목에 대해 순서대로 노출
         </div>
-
         <div id="gbkBoardSearch">
-
+          검색영역
         </div>
         <div id="gbkBoardPagination">
-
+          페이지네이션
         </div>
 
-
             {/* <div id="gbkMainBoard">
-              게시판 컨텐츠
+              게시판 컨텐츠  게시판 : {example} 
             </div> */}
       </div>
 {/*       <div className="gbk-animation-tab">
